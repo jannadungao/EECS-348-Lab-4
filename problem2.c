@@ -2,13 +2,13 @@
 
 // converts celsius to fahrenheit
 float celsius_to_fahrenheit(float C) {
-    float F = ((9/5) * C) + 32;
+    float F = ((float)(9/5) * C) + 32;
     return F;
 }
 
 // converts fahrenheit to celsius
 float fahrenheit_to_celsius(float F) {
-    float C = (5/9) * (F - 32);
+    float C = ((float)5 / 9) * (F - 32);
     return C;
 }
 
@@ -26,13 +26,13 @@ float kelvin_to_celsius(float K) {
 
 // converts fahrenheit to kelvin
 float fahrenheit_to_kelvin(float F) {
-    float K = (F + 459.67) * (5/9);
+    float K = (F + 459.67) * ((float)5/9);
     return K;
 }
 
 // converts kelvin to fahrenheit
 float kelvin_to_fahrenheit(float K) {
-    float F = ((K - 273.15) * (9/5)) + 32;
+    float F = ((K - 273.15) * ((float)9/5)) + 32;
     return F;
 }
 
@@ -99,33 +99,20 @@ int main() {
             float c = fahrenheit_to_celsius(new_temp);
             cat = categorize_temperature(c);
         }
-
-        // create weather advisory message
-        if (cat == 1) {
-            char advisory[] = "Stay indoors and stay warm!";
-        } else if (cat == 2) {
-            char advisory[] = "Grab a jacket!";
-        } else if (cat == 3) {
-            char advisory[] = "Spend some time outside!";
-        } else if (cat == 4) {
-            char advisory[] = "Stay hydrated!";
-        } else if (cat == 5) {
-            char advisory[] = "Stay indoors and stay hydrated!";
-        }
         
         // print info
         printf("Converted temperature: %f\n", new_temp);
         
         if (cat == 1) {
-            printf("Temperature category: Freezing\nWeather Advisory: Stay indoors and stay warm!");
+            printf("Temperature category: Freezing\nWeather Advisory: Stay indoors and stay warm!\n");
         } else if (cat == 2) {
-            printf("Temperature category: Cold\nWeather Advisory: Grab a jacket"); 
+            printf("Temperature category: Cold\nWeather Advisory: Grab a jacket\n"); 
         } else if (cat == 3) {
-            printf("Temperature category: Comfortable\nWeather Advisory: Spend some time outside!");
+            printf("Temperature category: Comfortable\nWeather Advisory: Spend some time outside!\n");
         } else if (cat == 4) {
-            printf("Temperature category: Hot\nWeather Advisory: Stay hydrated!");
+            printf("Temperature category: Hot\nWeather Advisory: Stay hydrated!\n");
         } else if (cat == 5) {
-            printf("Temperature category: Extreme Heat\nWeather Advisory: Stay indoors and stay hydrated!");
+            printf("Temperature category: Extreme Heat\nWeather Advisory: Stay indoors and stay hydrated!\n");
         }
     }
 }
