@@ -29,8 +29,8 @@ int main() {
         int temp = score;
         // calculate possible permutations
         for (int i = 0; i <= TD_max; i++) { // check each permutation of TD_max
-            temp -= i * 6;
-            TD = i;
+            temp -= i * 6; // decrements temporary score tracker
+            TD = i; // track number of times TD occurs
             for (int j = 0; j <= FG_max; j++) { // check each permutation of FG_max
                 temp -= j * 3;
                 FG = j;            
@@ -43,7 +43,7 @@ int main() {
                         for (int m = 0; m <= TD_FG_max; m++) { // check each permutationof TD_FG_max
                             temp -= m * 7;
                             TD_FG = m;
-                            printf("%d TD + 2pt, %d TD + FG, %d TD, %d 3pt FG, %d Safety\n", TD_2PT, TD_FG, TD, FG, safety);
+                            printf("%d TD + 2pt, %d TD + FG, %d TD, %d 3pt FG, %d Safety\n", TD_2PT, TD_FG, TD, FG, safety); // print combination
                         }
                     }
                 }
